@@ -1,0 +1,35 @@
+{
+  "name": "@bencoveney/utils",
+  "version": "1.0.0",
+  "description": "TypeScript/JavaScript utility functions I commonly use",
+  "main": "dist/index.js",
+  "directories": {
+    "dist": "dist"
+  },
+  "scripts": {
+    "build": "tsc",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bencoveney/utils.git"
+  },
+  "keywords": [
+    "utility",
+    "utils",
+    "common",
+    "library"
+  ],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bencoveney/utils/issues"
+  },
+  "homepage": "https://github.com/bencoveney/utils#readme",
+  "devDependencies": {
+    "@types/jest": "^27.0.3",
+    "jest": "^27.4.4",
+    "ts-jest": "^27.1.1",
+    "typescript": "^4.5.3"
+  }
+}
