@@ -2,9 +2,11 @@
   "name": "@bencoveney/utils",
   "version": "1.0.0",
   "description": "TypeScript/JavaScript utility functions I commonly use",
-  "main": "dist/index.js",
+  "main": "dist/utils.js",
+  "types": "dist/utils.ts",
+  "sideEffects": false,
   "directories": {
-    "dist": "dist"
+    "bin": "dist"
   },
   "scripts": {
     "build": "tsc",
@@ -31,5 +33,8 @@
     "jest": "^27.4.4",
     "ts-jest": "^27.1.1",
     "typescript": "^4.5.3"
-  }
+  },
+  "files": [
+    "dist/**/*"
+  ]
 }
