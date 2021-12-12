@@ -34,10 +34,17 @@ test("toHexidecimal", () => {
 
 test("fromHexidecimal", () => {
   expect(color.fromHex("#000000")).toEqual(testData[0]);
-  expect(color.fromHex("#ffffff")).toEqual(testData[1]);
   expect(color.fromHex("#646464")).toEqual(testData[2]);
+
+  // Lowercase
+  expect(color.fromHex("#ffffff")).toEqual(testData[1]);
   expect(color.fromHex("#ff6400")).toEqual(testData[3]);
   expect(color.fromHex("#00ff64")).toEqual(testData[4]);
+
+  // Uppercase
+  expect(color.fromHex("#FFFFFF")).toEqual(testData[1]);
+  expect(color.fromHex("#FF6400")).toEqual(testData[3]);
+  expect(color.fromHex("#00FF64")).toEqual(testData[4]);
 });
 
 test("toRgb", () => {
