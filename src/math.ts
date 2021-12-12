@@ -1,4 +1,11 @@
+/**
+ * Pi.
+ */
 export const PI = Math.PI;
+
+/**
+ * Tau (twice Pi).
+ */
 export const TAU = PI * 2;
 
 /**
