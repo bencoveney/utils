@@ -1,3 +1,20 @@
-export function degToRad(d: number): number {
-  return (d * Math.PI) / 180;
+export const PI = Math.PI;
+export const TAU = PI * 2;
+
+/**
+ * Convert radians to degrees.
+ * @param {number} degrees The amount of degrees to convert to radians.
+ * @return {number} The amount of radians.
+ */
+export function degToRad(degrees: number): number {
+  return (degrees * PI) / 180;
+}
+
+/**
+ * Convert degrees to radians.
+ * @param {number} degrees The amount of radians to convert to degrees.
+ * @return {number} The amount of degrees.
+ */
+export function radToDeg(radians: number): number {
+  return (radians * 180) / PI;
 }

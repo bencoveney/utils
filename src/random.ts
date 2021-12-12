@@ -1,5 +1,6 @@
 import { Vector2 } from "./vector";
 
+// TODO: Overload with only max.
 export function randomNumber(min: number, max: number): number {
   const random = Math.random();
   const scale = max - min;
