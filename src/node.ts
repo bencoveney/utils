@@ -10,12 +10,13 @@ export function getIpv4NetworkInterfaces(): [string, NetworkInterfaceInfo[]][] {
     })
 }
 
-export function logIpv4NetworkInterfaces(): void {
+// Kinda contrived but useful for esbuild
+export function logIpv4NetworkInterfaces(port: number): void {
   getIpv4NetworkInterfaces()
     .forEach(([name, info]) => {
       const ipv4 = info!.find((ip) => ip.family === "IPv4");
       const alias = ipv4!.internal ? "Local" : name;
-      console.log(`${alias}: http://${ipv4!.address}:${server.port}`);
+      console.log(`${alias}: http://${ipv4!.address}:${port}`);
     });
 }
 
