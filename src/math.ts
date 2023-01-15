@@ -25,3 +25,11 @@ export function degToRad(degrees: number): number {
 export function radToDeg(radians: number): number {
   return (radians * 180) / PI;
 }
+/**
+ * Like the remainder operator (%) except it supports negative values.
+ * @param value
+ * @param max
+ */
+export function wrap(value: number, max: number) {
+  return ((value % max) + max) % value;
+}
