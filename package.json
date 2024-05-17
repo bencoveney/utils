@@ -2,8 +2,8 @@
   "name": "@bencoveney/utils",
   "version": "1.2.0",
   "description": "TypeScript/JavaScript utility functions I commonly use",
-  "main": "dist/utils.js",
-  "types": "dist/utils.ts",
+  "main": "./dist/utils.js",
+  "types": "./dist/utils.ts",
   "sideEffects": false,
   "directories": {
     "bin": "dist"
@@ -37,7 +37,7 @@
   "files": [
     "dist/**/*"
   ],
-  "dependencies": {
+  "optionalDependencies": {
     "@types/node": "^20.12.12"
   }
 }
