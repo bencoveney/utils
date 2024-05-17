@@ -1,6 +1,6 @@
 # @bencoveney/utils
 
-![@bencoveney/utils on NPM](https://img.shields.io/npm/v/@bencoveney/utils) ![CI build status](https://img.shields.io/github/actions/workflow/status/bencoveney/utils/publish.yml?branch=master)
+![@bencoveney/utils on NPM](https://img.shields.io/npm/v/@bencoveney/utils) ![CI build status](https://img.shields.io/github/actions/workflow/status/bencoveney/utils/build.yml?branch=main)
 
 TypeScript/JavaScript utility functions I commonly use
 
