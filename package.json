@@ -1,6 +1,6 @@
 {
   "name": "@bencoveney/utils",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "TypeScript/JavaScript utility functions I often use",
   "main": "./dist/utils.js",
   "types": "./dist/utils.ts",
@@ -32,6 +32,7 @@
     "@types/jest": "^29.5.12",
     "jest": "^29.7.0",
     "ts-jest": "^29.1.2",
+    "ts-node": "^10.9.2",
     "typescript": "^5.4.5"
   },
   "files": [
