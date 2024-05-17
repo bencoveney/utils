@@ -1,7 +1,7 @@
-export * from "./array";
-export * from "./color";
-export * from "./dom";
-export * from "./math";
-export * from "./random";
-export * from "./vector";
-export * from "./node";
+export * as array from "./array";
+export * as color from "./color";
+export * as dom from "./dom";
+export * as math from "./math";
+export * as random from "./random";
+export * as vector from "./vector";
+export * as node from "./node";
