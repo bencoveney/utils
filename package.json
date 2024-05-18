@@ -2,8 +2,8 @@
   "name": "@bencoveney/utils",
   "version": "3.0.0",
   "description": "TypeScript/JavaScript utility functions I often use",
-  "main": "./dist/utils.js",
-  "types": "./dist/utils.ts",
+  "main": "./dist/index.js",
+  "types": "./dist/index.ts",
   "sideEffects": false,
   "directories": {
     "bin": "dist"
@@ -11,7 +11,7 @@
   "scripts": {
     "build": "tsc",
     "test": "jest",
-    "docs": "typedoc --out docs src/utils.ts"
+    "docs": "typedoc --out docs src/index.ts"
   },
   "repository": {
     "type": "git",
