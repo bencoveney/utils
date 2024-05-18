@@ -1,4 +1,4 @@
-import * as nulls from "./empty";
+import * as falsy from "./falsy";
 
 test.each([
   { value: null, throws: true },
@@ -13,11 +13,11 @@ test.each([
   { value: 1, throws: false },
   { value: -1, throws: false },
   { value: "not null", throws: false },
-])("nulls.throwIfNull($possiblyNull) throws: $throws", ({ value, throws }) => {
+])("falsy.throwIfNull($possiblyNull) throws: $throws", ({ value, throws }) => {
   if (throws) {
-    expect(() => nulls.throwIfNull(value)).toThrow();
+    expect(() => falsy.throwIfNull(value)).toThrow();
   } else {
-    expect(nulls.throwIfNull(value)).toBe(value);
+    expect(falsy.throwIfNull(value)).toBe(value);
   }
 });
 
@@ -34,11 +34,11 @@ test.each([
   { value: 1, throws: false },
   { value: -1, throws: false },
   { value: "not null", throws: false },
-])("nulls.throwIfUndefined($value) throws: $throws", ({ value, throws }) => {
+])("falsy.throwIfUndefined($value) throws: $throws", ({ value, throws }) => {
   if (throws) {
-    expect(() => nulls.throwIfUndefined(value)).toThrow();
+    expect(() => falsy.throwIfUndefined(value)).toThrow();
   } else {
-    expect(nulls.throwIfUndefined(value)).toBe(value);
+    expect(falsy.throwIfUndefined(value)).toBe(value);
   }
 });
 
@@ -55,11 +55,11 @@ test.each([
   { value: 1, throws: false },
   { value: -1, throws: false },
   { value: "not null", throws: false },
-])("nulls.throwIfNullish($value) throws: $throws", ({ value, throws }) => {
+])("falsy.throwIfNullish($value) throws: $throws", ({ value, throws }) => {
   if (throws) {
-    expect(() => nulls.throwIfNullish(value)).toThrow();
+    expect(() => falsy.throwIfNullish(value)).toThrow();
   } else {
-    expect(nulls.throwIfNullish(value)).toBe(value);
+    expect(falsy.throwIfNullish(value)).toBe(value);
   }
 });
 
@@ -76,11 +76,11 @@ test.each([
   { value: 1, throws: false },
   { value: -1, throws: false },
   { value: "not null", throws: false },
-])("nulls.throwIfFalsy($value) throws: $throws", ({ value, throws }) => {
+])("falsy.throwIfFalsy($value) throws: $throws", ({ value, throws }) => {
   if (throws) {
-    expect(() => nulls.throwIfFalsy(value)).toThrow();
+    expect(() => falsy.throwIfFalsy(value)).toThrow();
   } else {
-    expect(nulls.throwIfFalsy(value)).toBe(value);
+    expect(falsy.throwIfFalsy(value)).toBe(value);
   }
 });
 
@@ -99,8 +99,8 @@ const values = [
   "not null",
 ];
 
-test("nulls.notNull", () => {
-  expect(values.filter((value) => nulls.notNull(value))).toEqual([
+test("falsy.notNull", () => {
+  expect(values.filter((value) => falsy.notNull(value))).toEqual([
     undefined,
     false,
     NaN,
@@ -115,8 +115,8 @@ test("nulls.notNull", () => {
   ]);
 });
 
-test("nulls.notUndefined", () => {
-  expect(values.filter((value) => nulls.notUndefined(value))).toEqual([
+test("falsy.notUndefined", () => {
+  expect(values.filter((value) => falsy.notUndefined(value))).toEqual([
     null,
     false,
     NaN,
@@ -131,8 +131,8 @@ test("nulls.notUndefined", () => {
   ]);
 });
 
-test("nulls.notNullish", () => {
-  expect(values.filter((value) => nulls.notNullish(value))).toEqual([
+test("falsy.notNullish", () => {
+  expect(values.filter((value) => falsy.notNullish(value))).toEqual([
     false,
     NaN,
     0,
@@ -146,8 +146,8 @@ test("nulls.notNullish", () => {
   ]);
 });
 
-test("nulls.notFalsy", () => {
-  expect(values.filter((value) => nulls.notFalsy(value))).toEqual([
+test("falsy.notFalsy", () => {
+  expect(values.filter((value) => falsy.notFalsy(value))).toEqual([
     true,
     1,
     -1,
