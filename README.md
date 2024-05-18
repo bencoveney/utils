@@ -2,18 +2,18 @@
 
 ![@bencoveney/utils on NPM](https://img.shields.io/npm/v/@bencoveney/utils) ![CI build status](https://img.shields.io/github/actions/workflow/status/bencoveney/utils/build.yml?branch=main)
 
-TypeScript/JavaScript utility functions I commonly use
+This project is a collection of utility functions I have used in a few different projects, pulled together to they are easily reusable in future projects.
 
-## Ideas
+This collection is not:
 
-- All files with "common" export names should maybe make them slightly more specific.
+- Cohesive. It is mish-mash of domains, the only linking thread is that I have used them in multiple places.
+- Comprehesive. For each domain, I have not listed every possible useful function, just the ones I want to reuse.
+- Fully tested. It is useful to be able to "dump" functions here to re-use, and come back and rigorously test later on.
+
+## To do list
+
 - Standardise on storing data (colours, vectors, matrices) as arrays (rather than named objects).
-- Is wrap() functionally mod?
-- Add an array helper using wrap() for indices.
 - More tests.
-- LeftPad, CenterPad?, RightPad.
-- Standardize to US english.
 - Autogenerate docs.
 - ND array including: Populate, foreach, copy.
-- Matrices.
 - Collections with GroupBy.
