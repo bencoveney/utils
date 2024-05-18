@@ -1,5 +1,7 @@
 # @bencoveney/utils
 
+[Github](https://github.com/bencoveney/utils) - [Documentation](https://bencoveney.com/utils/)
+
 ![@bencoveney/utils on NPM](https://img.shields.io/npm/v/@bencoveney/utils) ![CI build status](https://img.shields.io/github/actions/workflow/status/bencoveney/utils/build.yml?branch=main)
 
 This project is a collection of utility functions I have used in a few different projects, pulled together to they are easily reusable in future projects.
