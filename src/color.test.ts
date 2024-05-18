@@ -8,7 +8,7 @@ const testData: color.Color[] = [
   { r: 0, g: 255, b: 100 },
 ];
 
-test("toDecimal", () => {
+test("color.toDec", () => {
   expect(color.toDec(testData[0])).toEqual(0);
   expect(color.toDec(testData[1])).toEqual(16777215);
   expect(color.toDec(testData[2])).toEqual(6579300);
@@ -16,7 +16,7 @@ test("toDecimal", () => {
   expect(color.toDec(testData[4])).toEqual(65380);
 });
 
-test("fromDecimal", () => {
+test("color.fromDec", () => {
   expect(color.fromDec(0)).toEqual(testData[0]);
   expect(color.fromDec(16777215)).toEqual(testData[1]);
   expect(color.fromDec(6579300)).toEqual(testData[2]);
@@ -24,7 +24,7 @@ test("fromDecimal", () => {
   expect(color.fromDec(65380)).toEqual(testData[4]);
 });
 
-test("toHexidecimal", () => {
+test("color.toHex", () => {
   expect(color.toHex(testData[0])).toBe("#000000");
   expect(color.toHex(testData[1])).toBe("#ffffff");
   expect(color.toHex(testData[2])).toBe("#646464");
@@ -32,7 +32,7 @@ test("toHexidecimal", () => {
   expect(color.toHex(testData[4])).toBe("#00ff64");
 });
 
-test("fromHexidecimal", () => {
+test("color.fromHex", () => {
   expect(color.fromHex("#000000")).toEqual(testData[0]);
   expect(color.fromHex("#646464")).toEqual(testData[2]);
 
@@ -47,7 +47,7 @@ test("fromHexidecimal", () => {
   expect(color.fromHex("#00FF64")).toEqual(testData[4]);
 });
 
-test("toRgb", () => {
+test("color.toRgb", () => {
   expect(color.toRgb(testData[0])).toBe("rgb(0, 0, 0)");
   expect(color.toRgb(testData[1])).toBe("rgb(255, 255, 255)");
   expect(color.toRgb(testData[2])).toBe("rgb(100, 100, 100)");
