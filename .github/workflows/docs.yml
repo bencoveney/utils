@@ -15,20 +15,21 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v2
         with:
-          node-version: "18.12.1"
+          node-version: "22.x"
+          registry-url: "https://registry.npmjs.org"
 
-      - name: Install and Build 🔧
+      - name: Install and Build Docs
         run: |
           npm ci
-          npm run build
+          npm run docs
 
       - name: Prevent Jekyll
-        run: touch ./build/.nojekyll
+        run: touch ./docs/.nojekyll
 
-      - name: Deploy 🚀
+      - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4.3.3
         with:
           branch: gh-pages
-          folder: build
+          folder: docs
