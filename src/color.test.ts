@@ -8,49 +8,57 @@ const testData: color.Color[] = [
   { r: 0, g: 255, b: 100 },
 ];
 
-test("color.toDec", () => {
-  expect(color.toDec(testData[0])).toEqual(0);
-  expect(color.toDec(testData[1])).toEqual(16777215);
-  expect(color.toDec(testData[2])).toEqual(6579300);
-  expect(color.toDec(testData[3])).toEqual(16737280);
-  expect(color.toDec(testData[4])).toEqual(65380);
-});
+test.each([
+  { input: testData[0], result: 0 },
+  { input: testData[1], result: 16777215 },
+  { input: testData[2], result: 6579300 },
+  { input: testData[3], result: 16737280 },
+  { input: testData[4], result: 65380 },
+])("color.toDec($input) => $result", ({ input, result }) =>
+  expect(color.toDec(input)).toEqual(result)
+);
 
-test("color.fromDec", () => {
-  expect(color.fromDec(0)).toEqual(testData[0]);
-  expect(color.fromDec(16777215)).toEqual(testData[1]);
-  expect(color.fromDec(6579300)).toEqual(testData[2]);
-  expect(color.fromDec(16737280)).toEqual(testData[3]);
-  expect(color.fromDec(65380)).toEqual(testData[4]);
-});
+test.each([
+  { input: 0, result: testData[0] },
+  { input: 16777215, result: testData[1] },
+  { input: 6579300, result: testData[2] },
+  { input: 16737280, result: testData[3] },
+  { input: 65380, result: testData[4] },
+])("color.fromDec($input) => $result", ({ input, result }) =>
+  expect(color.fromDec(input)).toEqual(result)
+);
 
-test("color.toHex", () => {
-  expect(color.toHex(testData[0])).toBe("#000000");
-  expect(color.toHex(testData[1])).toBe("#ffffff");
-  expect(color.toHex(testData[2])).toBe("#646464");
-  expect(color.toHex(testData[3])).toBe("#ff6400");
-  expect(color.toHex(testData[4])).toBe("#00ff64");
-});
+test.each([
+  { input: testData[0], result: "#000000" },
+  { input: testData[1], result: "#ffffff" },
+  { input: testData[2], result: "#646464" },
+  { input: testData[3], result: "#ff6400" },
+  { input: testData[4], result: "#00ff64" },
+])("color.toHex($input) => $result", ({ input, result }) =>
+  expect(color.toHex(input)).toEqual(result)
+);
 
-test("color.fromHex", () => {
-  expect(color.fromHex("#000000")).toEqual(testData[0]);
-  expect(color.fromHex("#646464")).toEqual(testData[2]);
-
+test.each([
+  { input: "#000000", result: testData[0] },
+  { input: "#ffffff", result: testData[1] },
   // Lowercase
-  expect(color.fromHex("#ffffff")).toEqual(testData[1]);
-  expect(color.fromHex("#ff6400")).toEqual(testData[3]);
-  expect(color.fromHex("#00ff64")).toEqual(testData[4]);
-
+  { input: "#646464", result: testData[2] },
+  { input: "#ff6400", result: testData[3] },
+  { input: "#00ff64", result: testData[4] },
   // Uppercase
-  expect(color.fromHex("#FFFFFF")).toEqual(testData[1]);
-  expect(color.fromHex("#FF6400")).toEqual(testData[3]);
-  expect(color.fromHex("#00FF64")).toEqual(testData[4]);
-});
+  { input: "#FFFFFF", result: testData[1] },
+  { input: "#FF6400", result: testData[3] },
+  { input: "#00FF64", result: testData[4] },
+])("color.fromHex($input) => $result", ({ input, result }) =>
+  expect(color.fromHex(input)).toEqual(result)
+);
 
-test("color.toRgb", () => {
-  expect(color.toRgb(testData[0])).toBe("rgb(0, 0, 0)");
-  expect(color.toRgb(testData[1])).toBe("rgb(255, 255, 255)");
-  expect(color.toRgb(testData[2])).toBe("rgb(100, 100, 100)");
-  expect(color.toRgb(testData[3])).toBe("rgb(255, 100, 0)");
-  expect(color.toRgb(testData[4])).toBe("rgb(0, 255, 100)");
-});
+test.each([
+  { input: testData[0], result: "rgb(0, 0, 0)" },
+  { input: testData[1], result: "rgb(255, 255, 255)" },
+  { input: testData[2], result: "rgb(100, 100, 100)" },
+  { input: testData[3], result: "rgb(255, 100, 0)" },
+  { input: testData[4], result: "rgb(0, 255, 100)" },
+])("color.toRgb($input) => $result", ({ input, result }) =>
+  expect(color.toRgb(input)).toEqual(result)
+);
