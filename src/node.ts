@@ -4,20 +4,20 @@ import * as fs from "fs";
 
 export function getIpv4NetworkInterfaces(): [string, NetworkInterfaceInfo[]][] {
   return Object.entries(networkInterfaces())
+    .filter((entry): entry is [string, NetworkInterfaceInfo[]] => !!entry[1])
     .filter(([_, info]) => {
       const ipv4 = info!.find((ip) => ip.family === "IPv4");
       return !!ipv4;
-    })
+    });
 }
 
 // Kinda contrived but useful for esbuild
 export function logIpv4NetworkInterfaces(port: number): void {
-  getIpv4NetworkInterfaces()
-    .forEach(([name, info]) => {
-      const ipv4 = info!.find((ip) => ip.family === "IPv4");
-      const alias = ipv4!.internal ? "Local" : name;
-      console.log(`${alias}: http://${ipv4!.address}:${port}`);
-    });
+  getIpv4NetworkInterfaces().forEach(([name, info]) => {
+    const ipv4 = info!.find((ip) => ip.family === "IPv4");
+    const alias = ipv4!.internal ? "Local" : name;
+    console.log(`${alias}: http://${ipv4!.address}:${port}`);
+  });
 }
 
 export function mkDirP(parentDir: string, childDir: string) {

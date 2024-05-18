@@ -20,8 +20,8 @@ export const DegreesPerRadian = TAU / 360;
 
 /**
  * Convert radians to degrees.
- * @param {number} degrees The amount of degrees to convert to radians.
- * @return {number} The amount of radians.
+ * @param degrees The amount of degrees to convert to radians.
+ * @return The amount of radians.
  */
 export function toRadians(degrees: number): number {
   return degrees * DegreesPerRadian;
@@ -29,8 +29,8 @@ export function toRadians(degrees: number): number {
 
 /**
  * Convert degrees to radians.
- * @param {number} degrees The amount of radians to convert to degrees.
- * @return {number} The amount of degrees.
+ * @param radians The amount of radians to convert to degrees.
+ * @return The amount of degrees.
  */
 export function toDegrees(radians: number): number {
   return radians * RadiansPerDegree;
@@ -96,11 +96,11 @@ export function lerpInts(min: number, max: number, t: number): number {
 
 /**
  * Rounds the given value to dp decimal places.
- * @param {*} value The value to round.
- * @param {*} dp The number of decimal places.
+ * @param value The value to round.
+ * @param dp The number of decimal places.
  * @returns The rounded value.
  */
-export function roundTo(value, dp) {
+export function roundTo(value: number, dp: number): number {
   const mult = Math.pow(10, dp);
   return Math.round(value * mult) / mult;
 }
@@ -108,12 +108,16 @@ export function roundTo(value, dp) {
 /**
  * Interpolates smoothly between 0 and 1, based on the value of X relative to the left and right edges.
  * https://en.wikipedia.org/wiki/Smoothstep
- * @param {*} leftEdge The minimum value, assumed smaller than the right edge.
- * @param {*} rightEdge The maximum value, assumed smaller than the right edge.
- * @param {*} x The value between the left and right edges
+ * @param leftEdge The minimum value, assumed smaller than the right edge.
+ * @param rightEdge The maximum value, assumed smaller than the right edge.
+ * @param x The value between the left and right edges
  * @returns 0 if x is less than the leftEdge, 1 if x is greater than the right edge, else a smoothly interpolated value between 0 and 1.
  */
-export function smoothstep(leftEdge, rightEdge, x) {
+export function smoothstep(
+  leftEdge: number,
+  rightEdge: number,
+  x: number
+): number {
   const t = clamp(inverseLerp(leftEdge, rightEdge, x));
   return t * t * (3 - 2 * t);
 }
@@ -121,12 +125,16 @@ export function smoothstep(leftEdge, rightEdge, x) {
 /**
  * Interpolates (more) smoothly between 0 and 1, based on the value of X relative to the left and right edges.
  * https://en.wikipedia.org/wiki/Smoothstep
- * @param {*} leftEdge The minimum value, assumed smaller than the right edge.
- * @param {*} rightEdge The maximum value, assumed smaller than the right edge.
- * @param {*} x The value between the left and right edges
+ * @param leftEdge The minimum value, assumed smaller than the right edge.
+ * @param rightEdge The maximum value, assumed smaller than the right edge.
+ * @param x The value between the left and right edges
  * @returns 0 if x is less than the leftEdge, 1 if x is greater than the right edge, else a smoothly interpolated value between 0 and 1.
  */
-export function smootherstep(leftEdge, rightEdge, x) {
+export function smootherstep(
+  leftEdge: number,
+  rightEdge: number,
+  x: number
+): number {
   const t = clamp(inverseLerp(leftEdge, rightEdge, x));
   return t * t * t * (t * (6 * t - 15) + 10);
 }

@@ -1,5 +1,3 @@
-// TODO: https://github.com/bencoveney/webgl-isometric/blob/64f7b87ec9a88c14085e21637ae5524e8c985325/src/utils/color.ts
-
 /**
  * A color represented as its component parts.
  */
@@ -20,17 +18,18 @@ export interface Color {
 
 /**
  * Flatten a color to a number, where each byte represents the RGB components.
- * @param {Color} color Color to convert
- * @return {number} The hex triplet.
+ * @param color Color to convert
+ * @return The hex triplet.
  */
-export function toDec({ r, g, b }: Color): number {
+export function toDec(color: Color): number {
+  const { r, g, b } = color;
   return (r << 16) + (g << 8) + b;
 }
 
 /**
  * Extract the RGB components from the bytes of a number.
- * @param {Color} color Color to convert
- * @return {number} The hex triplet.
+ * @param hexTriplet The hex triplet to convert
+ * @return The output color.
  */
 export function fromDec(hexTriplet: number): Color {
   return {
@@ -43,8 +42,8 @@ export function fromDec(hexTriplet: number): Color {
 /**
  * Create a hexidecimal string (formatted as #ffffff) from the color.
  * Output will be lowercase.
- * @param {Color} color The color.
- * @return {string} The hexidecimal string.
+ * @param color The color.
+ * @return The hexidecimal string.
  */
 export function toHex(color: Color): string {
   return "#" + ((1 << 24) + toDec(color)).toString(16).substring(1, 7);
@@ -52,8 +51,8 @@ export function toHex(color: Color): string {
 
 /**
  * Parse a color from a hexidecimal string (formatted as #ffffff).
- * @param {string} hexidecimal The hexidecimal string.
- * @return {Color} The color.
+ * @param hexidecimal The hexidecimal string.
+ * @return The color.
  */
 export function fromHex(hexidecimal: string): Color {
   return fromDec(parseInt(hexidecimal.substring(1, 7), 16));
@@ -61,10 +60,11 @@ export function fromHex(hexidecimal: string): Color {
 
 /**
  * Create an rgb string (formatted as rgb(255, 255, 255)) from the color.=
- * @param {Color} { r, g, b }
- * @return {string} The hexidecimal string.
+ * @param color The color to format.
+ * @return The hexidecimal string.
  */
-export function toRgb({ r, g, b }: Color): string {
+export function toRgb(color: Color): string {
+  const { r, g, b } = color;
   return `rgb(${r}, ${g}, ${b})`;
 }
 
