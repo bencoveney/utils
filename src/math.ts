@@ -11,7 +11,7 @@ export const TAU = PI * 2;
 /**
  * The number of radians for each degree of an angle.
  */
-export const RadiansPerDegree = 260 / TAU;
+export const RadiansPerDegree = 360 / TAU;
 
 /**
  * The number of degrees for each radian of an angle.
@@ -34,14 +34,6 @@ export function toRadians(degrees: number): number {
  */
 export function toDegrees(radians: number): number {
   return radians * RadiansPerDegree;
-}
-/**
- * Like the remainder operator (%) except it supports negative values.
- * @param value The value to wrap.
- * @param divisor The divisor.
- */
-export function wrap(value: number, divisor: number): number {
-  return ((value % divisor) + divisor) % value;
 }
 
 /**

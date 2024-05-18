@@ -25,3 +25,15 @@ export function range(from: number, to: number): number[] {
 export function rangeTo(to: number): number[] {
   return range(0, to);
 }
+
+/**
+ * Index into the array at the specified position, wrapping around if going off the end.
+ * Like the remainder operator (%) except it supports negative values.
+ * @param index The index into the array.
+ * @param length The length of the array.
+ * @returns The wrapped index.
+ */
+export function wrapIndex(index: number, length: number): number {
+  const positiveIndex = index < 0 ? length - (-index % length) : index;
+  return positiveIndex % length;
+}
