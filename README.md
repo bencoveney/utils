@@ -12,13 +12,13 @@ This collection is not:
 - Comprehesive. For each domain, I have not listed every possible useful function, just the ones I want to reuse.
 - Fully tested. It is useful to be able to "dump" functions here to re-use, and come back and rigorously test later on.
 
-This functions in this collection generally adheres to these goals:
+This functions in this collection should (but do not yet always) adheres to these goals:
 
 - Functions should be small in scope.
 - Validity of parameters is the responsibility of the caller.
 - Avoid throwing errors.
 - Avoid dependencies.
-- Avoid creating work for the garbage collector.
+- Where possible, avoid creating unnecessary work for the garbage collector.
 
 ## To do list
 

@@ -1,8 +1,13 @@
 export * as array from "./array";
+export * as assets from "./assets";
 export * as color from "./color";
 export * as dom from "./dom";
+export * as equal from "./equal";
 export * as falsy from "./falsy";
+export * as id from "./id";
 export * as math from "./math";
 export * as node from "./node";
+export * as objects from "./objects";
 export * as random from "./random";
-export * as vector from "./vector";
+export * as vector2 from "./vector2";
+export * as vector3 from "./vector3";

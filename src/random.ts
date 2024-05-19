@@ -1,4 +1,4 @@
-import { Vector2 } from "./vector";
+import { Vector2 } from "./vector2";
 
 // TODO: Overload with only max.
 export function randomNumber(min: number, max: number): number {
