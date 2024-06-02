@@ -1,6 +1,6 @@
 {
   "name": "@bencoveney/utils",
-  "version": "3.1.0",
+  "version": "3.1.1",
   "description": "TypeScript/JavaScript utility functions I often use",
   "main": "./dist/index.js",
   "types": "./dist/index.ts",

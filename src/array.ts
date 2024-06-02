@@ -129,7 +129,7 @@ export function normalize(values: number[]): number[] {
     highest = Math.max(highest, values[i]);
     lowest = Math.min(lowest, values[i]);
   }
-  return values.map((value) => inverseLerp(value, lowest, highest));
+  return values.map((value) => inverseLerp(lowest, highest, value));
 }
 
 /**
